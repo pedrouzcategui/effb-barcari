@@ -40,7 +40,19 @@
         public function getEstatus() { return $this->Estatus; }
         public function setEstatus($Estatus) { $this->Estatus = $Estatus; }
 
-        // Constructor
+        // Constructor completo
+        // public function __construct($CODE, $ID_Evento, $categoria, $Tipo, $Fecha, $ID_Horario, $Disciplina, $Descripcion, $Estatus) {
+        //     $this->setCODE($CODE);
+        //     $this->setID_Evento($ID_Evento);
+        //     $this->setCategoria($categoria);
+        //     $this->setTipo($Tipo);
+        //     $this->setFecha($Fecha);
+        //     $this->setID_Horario($ID_Horario);
+        //     $this->setDisciplina($Disciplina);
+        //     $this->setDescripcion($Descripcion);
+        //     $this->setEstatus($Estatus);
+        // }
+
         public function __construct() {}
 
         // Listar eventos

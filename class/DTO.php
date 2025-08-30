@@ -225,5 +225,60 @@
 				return $Atletas;
 			} else return 0;
 		}
+
+		//devuelve una lista de las categorias
+		public static function ListarCategorias(){
+			$conn=new Conexion();
+
+			$result=$conn->ListarCategorias();
+
+			if ($result->num_rows > 0) {
+				while ($linea = $result->fetch_assoc()) {
+					$Categorias[] = $linea;
+				}
+
+				$conn->cerrar();
+				return $Categorias;
+			} else return 0;
+		}
+
+		//devuelve una lista de los tipos de evento
+		public static function ListarTiposEvento(){
+			$conn=new Conexion();
+
+			$result=$conn->ListarTiposEvento();
+
+			if ($result->num_rows > 0) {
+				while ($linea = $result->fetch_assoc()) {
+					$TiposEvento[] = $linea;
+				}
+
+				$conn->cerrar();
+				return $TiposEvento;
+			} else return 0;
+		}
+
+		//devuelve una lista de los horarios
+		public static function ListarHorarios(){
+			$conn=new Conexion();
+
+			$result=$conn->ListarHorarios();
+
+			if ($result->num_rows > 0) {
+				while ($linea = $result->fetch_assoc()) {
+					$Horarios[] = $linea;
+				}
+
+				$conn->cerrar();
+				return $Horarios;
+			} else return 0;
+		}
+
+		//registra un evento
+		public static function RegistrarEvento($ID_Categoria, $ID_Tipo, $Fecha, $ID_Horario, $Disciplina, $Descripcion){
+			$conn=new Conexion();
+			return $conn->RegistrarEvento($ID_Categoria, $ID_Tipo, $Fecha, $ID_Horario, $Disciplina, $Descripcion);
+			$conn->cerrar();
+		}
     }
     ?>

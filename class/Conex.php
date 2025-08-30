@@ -176,4 +176,29 @@
 			$sql = "SELECT p.Nombre1, p.Apellido1, p.Fecha_Nac FROM persona p, atleta a WHERE a.CI=p.CI and a.Estatus='Activo';";
 			return $this->conn->query($sql);
 		}
+
+		//devuelve las categorias
+		public function ListarCategorias(){
+			$sql = "SELECT * FROM categoria;";
+			return $this->conn->query($sql);
+		}
+
+		//devuelve los tipos de evento
+		public function ListarTiposEvento(){
+			$sql = "SELECT * FROM tipo_evento;";
+			return $this->conn->query($sql);
+		}
+
+		//devuelve los horarios
+		public function ListarHorarios(){
+			$sql = "SELECT * FROM horario;";
+			return $this->conn->query($sql);
+		}
+
+		//registra un evento
+		public function RegistrarEvento($ID_Categoria, $ID_Tipo, $Fecha, $ID_Horario, $Disciplina, $Descripcion){
+			$stmt = $this->conn->prepare("INSERT INTO evento (ID_Categoria, ID_Tipo, Fecha, ID_Horario, Disciplina, Descripcion, Estatus) VALUES (?, ?, ?, ?, ?, ?, '1')");
+			$stmt->bind_param("iisiss", $ID_Categoria, $ID_Tipo, $Fecha, $ID_Horario, $Disciplina, $Descripcion);
+			return $stmt->execute();
+		}
 	}
