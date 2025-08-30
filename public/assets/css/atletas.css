@@ -1,0 +1,154 @@
+/* atletas.css */
+
+/* Body y contenedor principal */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1.2rem;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.title {
+    text-align: center;
+    color: #270B99;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+}
+
+/* Acciones arriba */
+.top-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.btn-add {
+    background: #49C402;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.btn-add:hover { background: #3DAE01; }
+
+/* Tabla */
+.table-container { overflow-x: auto; }
+
+.table-atletas {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-atletas th, .table-atletas td {
+    padding: 0.8rem 1rem;
+    text-align: left;
+}
+
+.table-atletas thead {
+    background: #270B99;
+    color: #fff;
+}
+
+.table-atletas tbody tr {
+    border-bottom: 1px solid #ddd;
+    transition: background 0.3s;
+}
+.table-atletas tbody tr:hover { background: #f4f9f4; }
+
+/* Botones dentro de la tabla */
+td:last-child {
+    display: flex;            
+    justify-content: center;  
+    align-items: center;      
+    gap: 5px;                 
+}
+
+.btn-edit, .btn-delete {
+    border: none;
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    color: #fff;
+}
+.btn-edit { background: #49C402; }
+.btn-edit:hover { background: #3DAE01; }
+.btn-delete { background: #ff4d4f; }
+.btn-delete:hover { background: #d9363e; }
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background: #fff;
+    margin: 5% auto;
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 15px; right: 20px;
+    font-size: 2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close:hover { color: #000; }
+
+/* Formulario */
+.form-box fieldset {
+    border: 2px solid #49C402;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.form-box legend {
+    font-weight: bold;
+    color: #270B99;
+}
+
+.form-box input, .form-box select {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    margin: 0.3rem 0;
+    border-radius: 0.6rem;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 1rem;
+    background: #49C402;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.btn-submit:hover { background: #3DAE01; }
