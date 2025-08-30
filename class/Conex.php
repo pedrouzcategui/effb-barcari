@@ -166,4 +166,14 @@
         //_______________________________________________________________________
         //_________________________ EVENTO ______________________________________
 
+		//devuelve los eventos
+		public function ListarEventos(){
+			$sql = "SELECT * FROM evento;";
+			return $this->conn->query($sql);
+		}
+
+		public function ListarAtletas(){
+			$sql = "SELECT p.Nombre1, p.Apellido1, p.Fecha_Nac FROM persona p, atleta a WHERE a.CI=p.CI and a.Estatus='Activo';";
+			return $this->conn->query($sql);
+		}
 	}

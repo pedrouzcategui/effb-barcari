@@ -191,5 +191,39 @@
 
 			$conn->cerrar();
 		}
+
+		//_______________________________________________________________________
+		//_________________________ EVENTO ______________________________________
+
+		//devuelve una lista de los eventos
+		public static function ListarEventos(){
+			$conn=new Conexion();
+
+			$result=$conn->ListarEventos();
+
+			if ($result->num_rows > 0) {
+				while ($linea = $result->fetch_assoc()) {
+					$Eventos[] = $linea;
+				}
+
+				$conn->cerrar();
+				return $Eventos;
+			} else return 0;
+		}
+
+		public static function ListarAtletas(){
+			$conn=new Conexion();
+
+			$result=$conn->ListarAtletas();
+
+			if ($result->num_rows > 0) {
+				while ($linea = $result->fetch_assoc()) {
+					$Atletas[] = $linea;
+				}
+
+				$conn->cerrar();
+				return $Atletas;
+			} else return 0;
+		}
     }
     ?>

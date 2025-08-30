@@ -41,34 +41,11 @@
         public function setCorreo($Correo) { $this->Correo = $Correo; }
 
         // Constructor
-        public function __construct($Cedula, $Nombre1, $Nombre2, $Apellido1, $Apellido2, $FechaNac, $Telefono, $Direccion, $Correo) {
-            $this->setCedula($Cedula);
-            $this->setNombre1($Nombre1);
-            $this->setNombre2($Nombre2);
-            $this->setApellido1($Apellido1);
-            $this->setApellido2($Apellido2);
-            $this->setFechaNac($FechaNac);
-            $this->setTelefono($Telefono);
-            $this->setDireccion($Direccion);
-            $this->setCorreo($Correo);
-        }
-        // ---------------------------------------------------------------
-        //----------------------------------------------------------------
+        public function __construct() {}
 
-        //verifica la existencia de una persona 
-        public function VerificarExistencia(){
-            return DTO::VerificarExistenciaPersona($this->getCedula());
-        }
-
-        //registra una persona 
-        public function RegistrarPersona(){
-            return DTO::RegistrarPersona($this->getCedula(), $this->getNombre1(), $this->getNombre2(), $this->getApellido1(), $this->getApellido2(), $this->getFechaNac());
-        }
-        //registra la informacion de contacto de una persona
-        public function RegistrarContactoPersona(){
-            return DTO::RegistrarContactoPersona($this->getCedula(), $this->getTelefono(), $this->getCorreo(), $this->getDireccion());
+        // Listar atletas
+        public function listarAtletas(){
+            return DTO::ListarAtletas();
         }
     }
-
-
 ?>
