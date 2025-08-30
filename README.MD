@@ -1,4 +1,31 @@
-📁 **EDD_BARACARI**
+Atletas: Se encarga de toda la información de los atletas, teniendo en cuenta la siguiente información.
+
+- Documentación:
+- Año de nacimiento.
+- Cédula.
+- Número.
+- Número de representante.
+- Dirección de habitación.
+- Carta de solvencia (opcional si ha estado en otro club antes).
+- Categoría.
+- Grado de instrucción.
+- Escuela/Liceo al que pertenece.
+- Foto de representante.
+- Foto de atleta.
+
+Calendario: Encargado de llevar las siguientes fechas.
+
+- Información sobre las próximas prácticas.
+- Disciplina (sala/campo).
+- Lugar de entrenamiento:
+- - Parque El Mirador, Sector El Panadero.
+- - Domingo Sabio, calle El Liceo.
+- - Estadio Yulimar Rojas, El Paso.
+- Información sobre futuros cumpleaños.
+- Fechas importantes.
+- Categorías.
+
+```📁 **EDD_BARACARI**
 |
 ├── 📁 public/ **Pantalla principal de cada modulo (pantallas extras tambien aqui)**
 │   ├── calendario.php
@@ -12,7 +39,7 @@
 │       ├── 📁 js/
 │       └── 📁 img/
 ├── 📁 src/ **sources, codigo fuente de cada modulo (llamado a metodos, validaciones, etc...)**
-│   ├── 📁 calendario/ 
+│   ├── 📁 calendario/
 │   ├── 📁 credencial/
 │   ├── 📁 eventos/
 │   ├── 📁 login/
@@ -31,9 +58,10 @@
 │   └── Conex.php
 ├── 📁 database/ **query para la construccion de la BDD + Diagrama MER**
 │   └── futbol.sql
-└── 📁 includes/ **Archivos de inclusion recurrente o general** 
+└── 📁 includes/ **Archivos de inclusion recurrente o general**
     ├── footer.php
     ├── header.php
     └── session.php
 
 │   ├── login.php
+```
