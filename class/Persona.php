@@ -55,12 +55,12 @@
         // ---------------------------------------------------------------
         //----------------------------------------------------------------
 
-        //verifica la existencia de una persona 
+        //verifica la existencia de una persona
         public function VerificarExistencia(){
             return DTO::VerificarExistenciaPersona($this->getCedula());
         }
 
-        //registra una persona 
+        //registra una persona
         public function RegistrarPersona(){
             return DTO::RegistrarPersona($this->getCedula(), $this->getNombre1(), $this->getNombre2(), $this->getApellido1(), $this->getApellido2(), $this->getFechaNac());
         }
@@ -68,7 +68,10 @@
         public function RegistrarContactoPersona(){
             return DTO::RegistrarContactoPersona($this->getCedula(), $this->getTelefono(), $this->getCorreo(), $this->getDireccion());
         }
+
+        // Listar atletas
+        public function listarAtletas(){
+            return DTO::ListarAtletas();
+        }
     }
-
-
 ?>

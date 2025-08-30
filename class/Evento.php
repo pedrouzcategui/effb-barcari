@@ -41,16 +41,21 @@
         public function setEstatus($Estatus) { $this->Estatus = $Estatus; }
 
         // Constructor completo
-        public function __construct($CODE, $ID_Evento, $categoria, $Tipo, $Fecha, $ID_Horario, $Disciplina, $Descripcion, $Estatus) {
-            $this->setCODE($CODE);
-            $this->setID_Evento($ID_Evento);
-            $this->setCategoria($categoria);
-            $this->setTipo($Tipo);
-            $this->setFecha($Fecha);
-            $this->setID_Horario($ID_Horario);
-            $this->setDisciplina($Disciplina);
-            $this->setDescripcion($Descripcion);
-            $this->setEstatus($Estatus);
+        public function __construct($CODE = null, $ID_Evento = null, $categoria = null, $Tipo = null, $Fecha = null, $ID_Horario = null, $Disciplina = null, $Descripcion = null, $Estatus = null) {
+            if ($CODE) $this->setCODE($CODE);
+            if ($ID_Evento) $this->setID_Evento($ID_Evento);
+            if ($categoria) $this->setCategoria($categoria);
+            if ($Tipo) $this->setTipo($Tipo);
+            if ($Fecha) $this->setFecha($Fecha);
+            if ($ID_Horario) $this->setID_Horario($ID_Horario);
+            if ($Disciplina) $this->setDisciplina($Disciplina);
+            if ($Descripcion) $this->setDescripcion($Descripcion);
+            if ($Estatus) $this->setEstatus($Estatus);
+        }
+
+        // Listar eventos
+        public function listar(){
+            return DTO::ListarEventos();
         }
     }
 ?>
