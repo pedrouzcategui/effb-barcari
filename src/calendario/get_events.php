@@ -33,10 +33,20 @@ if (is_array($all_events)) {
 // Obtener cumpleaños de atletas
 $atletas = $persona->listarAtletas();
 if (is_array($atletas)) {
+    $current_year = date('Y');
+    $next_year = $current_year + 1;
     foreach ($atletas as $atleta) {
+        $birthday_month_day = date('m-d', strtotime($atleta['Fecha_Nac']));
+        // Evento para el año actual
         $events[] = array(
             'title' => 'Cumpleaños ' . $atleta['Nombre1'] . ' ' . $atleta['Apellido1'],
-            'start' => date('Y') . '-' . date('m-d', strtotime($atleta['Fecha_Nac'])),
+            'start' => $current_year . '-' . $birthday_month_day,
+            'color' => '#dc3545' // Color para cumpleaños
+        );
+        // Evento para el proximo año
+        $events[] = array(
+            'title' => 'Cumpleaños ' . $atleta['Nombre1'] . ' ' . $atleta['Apellido1'],
+            'start' => $next_year . '-' . $birthday_month_day,
             'color' => '#dc3545' // Color para cumpleaños
         );
     }

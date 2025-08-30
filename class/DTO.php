@@ -277,8 +277,9 @@
 		//registra un evento
 		public static function RegistrarEvento($ID_Categoria, $ID_Tipo, $Fecha, $ID_Horario, $Disciplina, $Descripcion){
 			$conn=new Conexion();
-			return $conn->RegistrarEvento($ID_Categoria, $ID_Tipo, $Fecha, $ID_Horario, $Disciplina, $Descripcion);
+			$result = $conn->RegistrarEvento($ID_Categoria, $ID_Tipo, $Fecha, $ID_Horario, $Disciplina, $Descripcion);
 			$conn->cerrar();
+			return $result;
 		}
     }
     ?>
